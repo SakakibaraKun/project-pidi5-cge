@@ -2,10 +2,18 @@ package com.edu.ceub.pidi.coramdeo.cge.entities;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="tb_pessoa")
 public class Pessoa {
 
-	
+	//verificar anotation para usar cpf como PK
+	@Id
 	private String cpf;
 	private String Nome;
 	private Date dt_nasc;
@@ -15,6 +23,10 @@ public class Pessoa {
 	private String endereco;
 	private String uf;
 	private Float valor;
+	
+	@ManyToOne
+	@JoinColumn(name = "eventos_id")
+	private Eventos eventos;
 	
 	public Pessoa() {
 	}
