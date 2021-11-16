@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name="tb_colaborador")
 public class Colaborador extends Pessoa{
 
-	private Float valor_contricuicao;
+	private Float valor_contribuicao;
 
 	@ManyToOne
 	@JoinColumn(name="pessoa_cpf")
@@ -21,13 +21,13 @@ public class Colaborador extends Pessoa{
 	
 	public Colaborador() {
 	}
-
-	public Float getValor_contricuicao() {
-		return valor_contricuicao;
+	
+	public Float getValor_contribuicao() {
+		return valor_contribuicao;
 	}
 
-	public void setValor_contricuicao(Float valor_contricuicao) {
-		this.valor_contricuicao = valor_contricuicao;
+	public void setValor_contribuicao(Float valor_contricuicao) {
+		this.valor_contribuicao = valor_contricuicao;
 	}
 	
 	
