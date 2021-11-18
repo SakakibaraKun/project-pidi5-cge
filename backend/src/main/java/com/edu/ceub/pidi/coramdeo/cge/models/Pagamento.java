@@ -1,4 +1,4 @@
-package com.edu.ceub.pidi.coramdeo.cge.entities;
+package com.edu.ceub.pidi.coramdeo.cge.models;
 
 import java.util.Date;
 
@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_pagamentos")
 public class Pagamento {
 	
 	@Id

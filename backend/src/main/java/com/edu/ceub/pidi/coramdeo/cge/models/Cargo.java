@@ -1,14 +1,16 @@
-package com.edu.ceub.pidi.coramdeo.cge.entities;
+package com.edu.ceub.pidi.coramdeo.cge.models;
+
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="tb_cargo")
 public class Cargo {
 	
 	@Id
@@ -19,16 +21,8 @@ public class Cargo {
 	private String descricao_cargo;
 	private String perfil_apropiado;
 	
-	public Cargo() {
-	}
-
-	public Cargo(Integer id, String nome_cargo, Byte hierarquia, String descricao_cargo, String perfil_apropiado) {
-		this.id = id;
-		this.nome_cargo = nome_cargo;
-		this.hierarquia = hierarquia;
-		this.descricao_cargo = descricao_cargo;
-		this.perfil_apropiado = perfil_apropiado;
-	}
+	//private List<Colaborador> colaborador;
+	
 
 	public Integer getId() {
 		return id;
@@ -69,8 +63,6 @@ public class Cargo {
 	public void setPerfil_apropiado(String perfil_apropiado) {
 		this.perfil_apropiado = perfil_apropiado;
 	}
-
-	
 	
 	
 }

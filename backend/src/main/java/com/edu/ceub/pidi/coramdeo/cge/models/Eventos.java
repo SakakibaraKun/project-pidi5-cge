@@ -1,4 +1,4 @@
-package com.edu.ceub.pidi.coramdeo.cge.entities;
+package com.edu.ceub.pidi.coramdeo.cge.models;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,7 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_eventos")
 public class Eventos {
 	
 	@Id
@@ -21,11 +20,7 @@ public class Eventos {
 	private Date dt_evento;
 	private String nome_evento;
 	
-	@OneToMany(mappedBy = "eventos")
-	private List<Pessoa> pessoas = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "eventos")
-	private List<Pagamento> pagamentos = new ArrayList<>();
 	
 	public Eventos() {
 	}
@@ -34,8 +29,6 @@ public class Eventos {
 		this.id = id;
 		this.dt_evento = dt_evento;
 		this.nome_evento = nome_evento;
-		this.pessoas = pessoas;
-		this.pagamentos = pagamentos;
 	}
 
 	public Integer getId() {
@@ -62,21 +55,6 @@ public class Eventos {
 		this.nome_evento = nome_evento;
 	}
 
-	public List<Pessoa> getPessoas() {
-		return pessoas;
-	}
-
-	public void setPessoas(List<Pessoa> pessoas) {
-		this.pessoas = pessoas;
-	}
-
-	public List<Pagamento> getPagamentos() {
-		return pagamentos;
-	}
-
-	public void setPagamentos(List<Pagamento> pagamentos) {
-		this.pagamentos = pagamentos;
-	}
 
 	
 	
