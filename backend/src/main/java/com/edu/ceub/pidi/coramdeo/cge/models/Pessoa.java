@@ -1,17 +1,21 @@
 package com.edu.ceub.pidi.coramdeo.cge.models;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
-public class Pessoa {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Pessoa {
 
-	//verificar anotation para usar cpf como PK
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private String cpf;
 	private String Nome;
 	private Date dt_nasc;
@@ -22,29 +26,15 @@ public class Pessoa {
 	private String uf;
 	private Float valor;
 	private Float valor_contribuicao;
-	
-	
-	
-	public Pessoa() {
-	}
-	
-	
+	 
 
-	public Pessoa(String cpf, String nome, Date dt_nasc, String telefone, String email, String cep, String endereco,
-			String uf, Float valor, Float valor_contribuicao) {
-		this.cpf = cpf;
-		Nome = nome;
-		this.dt_nasc = dt_nasc;
-		this.telefone = telefone;
-		this.email = email;
-		this.cep = cep;
-		this.endereco = endereco;
-		this.uf = uf;
-		this.valor = valor;
-		this.valor_contribuicao = valor_contribuicao;
+	public Integer getId() {
+		return id;
 	}
 
-
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getCpf() {
 		return cpf;
@@ -125,6 +115,6 @@ public class Pessoa {
 	public void setValor_contribuicao(Float valor_contribuicao) {
 		this.valor_contribuicao = valor_contribuicao;
 	}
-	
-	
+
+
 }
