@@ -1,13 +1,10 @@
 package com.edu.ceub.pidi.coramdeo.cge.models;
 
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 
 @Entity
@@ -20,8 +17,6 @@ public class Cargo {
 	private Byte hierarquia;
 	private String descricao_cargo;
 	private String perfil_apropiado;
-	
-	//private List<Colaborador> colaborador;
 	
 
 	public Integer getId() {

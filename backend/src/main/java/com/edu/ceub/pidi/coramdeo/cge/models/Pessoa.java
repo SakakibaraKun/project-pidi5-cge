@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -27,7 +29,10 @@ public abstract class Pessoa {
 	private Float valor;
 	private Float valor_contribuicao;
 	 
-
+	@ManyToOne
+	@JoinColumn(name = "fk_eventos")
+	private Eventos eventos;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -116,5 +121,14 @@ public abstract class Pessoa {
 		this.valor_contribuicao = valor_contribuicao;
 	}
 
+	public Eventos getEventos() {
+		return eventos;
+	}
+
+	public void setEventos(Eventos eventos) {
+		this.eventos = eventos;
+	}
+
+	
 
 }

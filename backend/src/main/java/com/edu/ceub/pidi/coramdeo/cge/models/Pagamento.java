@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
 public class Pagamento {
@@ -21,7 +20,7 @@ public class Pagamento {
 	private String forma_pagamento;
 	
 	@ManyToOne
-	@JoinColumn(name="eventos_id")
+	@JoinColumn(name="fk_eventos")
 	private Eventos eventos;
 
 	public Pagamento() {
