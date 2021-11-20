@@ -32,13 +32,15 @@ public abstract class Pessoa{
 	private Float valor;
 	private Float valor_contribuicao;
 	 
+	@OneToOne(mappedBy = "pessoa", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@PrimaryKeyJoinColumn
+	private Colaborador colaborador;
+	
 	@ManyToOne
 	@JoinColumn(name = "fk_eventos")
 	private Eventos eventos;
 	
-	@OneToOne(mappedBy = "pessoa", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@PrimaryKeyJoinColumn
-	private Colaborador colaborador;
+	
 	
 	public Long getCpf() {
 		return cpf;

@@ -12,11 +12,15 @@ import com.edu.ceub.pidi.coramdeo.cge.repository.PessoaRepository;
 @RestController
 public class PessoaController {
 	
-	/*
-	 * @Autowired PessoaRepository pessoarepository;
-	 * 
-	 * @RequestMapping("/pessoas") public List<Pessoa> PessoasLista(){ List<Pessoa>
-	 * pessoa = pessoarepository.findAll(); return pessoa; }
-	 */
+	
+	 @Autowired 
+	 PessoaRepository pessoarepository;
+	 
+	 @RequestMapping("/pessoas") 
+	 public List<Pessoa> PessoasLista(){ 
+	 List<Pessoa> pessoa = pessoarepository.findAll(); 
+	 return pessoa; 
+	 }
+
 	
 }
