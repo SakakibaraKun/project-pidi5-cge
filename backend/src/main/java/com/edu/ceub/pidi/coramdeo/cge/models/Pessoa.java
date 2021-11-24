@@ -3,21 +3,19 @@ package com.edu.ceub.pidi.coramdeo.cge.models;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Pessoa{
+public abstract class Pessoa {
 
 	@Id
 	@Column(name = "id_cpf", unique = true)
@@ -31,17 +29,20 @@ public abstract class Pessoa{
 	private String uf;
 	private Float valor;
 	private Float valor_contribuicao;
+
+	/*
+	 * @OneToMany private List<Colaborador> colaborador;
+	 * 
+	 * 
+	 * @OneToMany private List<Candidato> candidato;
+	 */
+	
+
+	
+	 @ManyToOne
+	 private Eventos eventos;
 	 
-	@OneToOne(mappedBy = "pessoa", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@PrimaryKeyJoinColumn
-	private Colaborador colaborador;
-	
-	@ManyToOne
-	@JoinColumn(name = "fk_eventos")
-	private Eventos eventos;
-	
-	
-	
+
 	public Long getCpf() {
 		return cpf;
 	}
@@ -122,14 +123,10 @@ public abstract class Pessoa{
 		this.valor_contribuicao = valor_contribuicao;
 	}
 
-	public Eventos getEventos() {
-		return eventos;
-	}
-
-	public void setEventos(Eventos eventos) {
-		this.eventos = eventos;
-	}
-
-	
+	/*
+	 * public Eventos getEventos() { return eventos; }
+	 * 
+	 * public void setEventos(Eventos eventos) { this.eventos = eventos; }
+	 */
 
 }

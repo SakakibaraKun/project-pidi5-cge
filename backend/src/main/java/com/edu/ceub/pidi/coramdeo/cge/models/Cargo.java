@@ -1,10 +1,14 @@
 package com.edu.ceub.pidi.coramdeo.cge.models;
 
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -18,6 +22,11 @@ public class Cargo {
 	private String descricao_cargo;
 	private String perfil_apropiado;
 	
+	
+	 @OneToMany
+	 @JoinColumn(name = "fk_colaborador") 
+	 private List<Colaborador> colaborador;
+	 
 
 	public Integer getId() {
 		return id;
