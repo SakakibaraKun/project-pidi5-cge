@@ -11,5 +11,4 @@ public class Candidato extends Pessoa{
 	 @JoinColumn(name = "fk_pessoa")
 	 private Pessoa pessoa;
 	 
-
 }

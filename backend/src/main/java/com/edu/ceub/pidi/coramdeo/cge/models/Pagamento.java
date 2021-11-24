@@ -23,17 +23,6 @@ public class Pagamento {
 	@JoinColumn(name="fk_eventos")
 	private Eventos eventos;
 
-	public Pagamento() {
-	}
-
-	public Pagamento(Integer id_pagamento, Date dt_pagamento, Float valor, String forma_pagamento, Eventos eventos) {
-		this.id_pagamento = id_pagamento;
-		this.dt_pagamento = dt_pagamento;
-		this.valor = valor;
-		this.forma_pagamento = forma_pagamento;
-		this.eventos = eventos;
-	}
-
 	public Integer getId_pagamento() {
 		return id_pagamento;
 	}
@@ -73,6 +62,5 @@ public class Pagamento {
 	public void setEventos(Eventos eventos) {
 		this.eventos = eventos;
 	}
-	
-	
+
 }

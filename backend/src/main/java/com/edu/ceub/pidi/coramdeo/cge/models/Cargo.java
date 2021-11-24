@@ -22,11 +22,9 @@ public class Cargo {
 	private String descricao_cargo;
 	private String perfil_apropiado;
 	
-	
-	 @OneToMany
-	 @JoinColumn(name = "fk_colaborador") 
-	 private List<Colaborador> colaborador;
-	 
+	@OneToMany
+	@JoinColumn(name = "fk_colaborador") 
+	private List<Colaborador> colaborador;
 
 	public Integer getId() {
 		return id;
@@ -67,6 +65,13 @@ public class Cargo {
 	public void setPerfil_apropiado(String perfil_apropiado) {
 		this.perfil_apropiado = perfil_apropiado;
 	}
-	
-	
+
+	public List<Colaborador> getColaborador() {
+		return colaborador;
+	}
+
+	public void setColaborador(List<Colaborador> colaborador) {
+		this.colaborador = colaborador;
+	}
+		 
 }
