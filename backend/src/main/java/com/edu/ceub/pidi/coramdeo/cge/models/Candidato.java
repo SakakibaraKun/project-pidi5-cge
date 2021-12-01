@@ -7,8 +7,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Candidato extends Pessoa{
 
-	 @ManyToOne
-	 @JoinColumn(name = "fk_pessoa")
-	 private Pessoa pessoa;
+//	 @ManyToOne
+//	 @JoinColumn(name = "fk_pessoa")
+//	 private Pessoa pessoa;
 	 
 }

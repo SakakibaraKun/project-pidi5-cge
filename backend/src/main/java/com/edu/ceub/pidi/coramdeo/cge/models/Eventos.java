@@ -32,6 +32,9 @@ public class Eventos implements Serializable{
 	@NotBlank
 	private String Nome_evento;
 	
+	@OneToMany
+	@JoinColumn(name = "fk_pessoa") 
+	private List<Pessoa> pessoa;
 	
 	
 	public Integer getId() {
@@ -70,20 +73,5 @@ public class Eventos implements Serializable{
 
 	
 
-//	public List<Pagamento> getPagamento() {
-//		return pagamento;
-//	}
-//
-//	public void setPagamento(List<Pagamento> pagamento) {
-//		this.pagamento = pagamento;
-//	}
-//
-//	public List<Pessoa> getPessoa() {
-//		return pessoa;
-//	}
-//
-//	public void setPessoa(List<Pessoa> pessoa) {
-//		this.pessoa = pessoa;
-//	}
 
 }

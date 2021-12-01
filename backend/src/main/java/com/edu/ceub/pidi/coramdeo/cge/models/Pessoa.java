@@ -108,14 +108,5 @@ public abstract class Pessoa {
 	public void setValor_contribuicao(Float valor_contribuicao) {
 		this.valor_contribuicao = valor_contribuicao;
 	}
-
-//	public Eventos getEventos() {
-//		return eventos;
-//	}
-//
-//	public void setEventos(Eventos eventos) {
-//		this.eventos = eventos;
-//	}
-	 
 	
 }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<nav>
+		<a href="/eventos"><h2>Lista de Eventos</h2></a>
+	</nav>
+	
+	<div th:each="evento : ${evento}" class="container">
+		<h5>Detalhes do Evento</h5>
+		<div class="row">
+			<p>
+				Nome: <span th:text=${evento.nome_evento}></span>
+			<p />
+			<p>
+				Data: <span th:date=${evento.dt_evento}></span>
+			<p />
+		</div>
+	</div>
+</body>
+</html>
