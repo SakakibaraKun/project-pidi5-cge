@@ -26,8 +26,8 @@ public abstract class Pessoa {
 	private Float valor;
 	private Float valor_contribuicao;
 	
-	@ManyToOne
-	private Eventos eventos;
+//	@ManyToOne
+//	private Eventos eventos;
 
 	public Long getCpf() {
 		return cpf;
@@ -109,13 +109,13 @@ public abstract class Pessoa {
 		this.valor_contribuicao = valor_contribuicao;
 	}
 
-	public Eventos getEventos() {
-		return eventos;
-	}
-
-	public void setEventos(Eventos eventos) {
-		this.eventos = eventos;
-	}
+//	public Eventos getEventos() {
+//		return eventos;
+//	}
+//
+//	public void setEventos(Eventos eventos) {
+//		this.eventos = eventos;
+//	}
 	 
 	
 }

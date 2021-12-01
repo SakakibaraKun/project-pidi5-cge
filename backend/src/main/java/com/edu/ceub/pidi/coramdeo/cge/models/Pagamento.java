@@ -19,9 +19,9 @@ public class Pagamento {
 	private Float valor;
 	private String forma_pagamento;
 	
-	@ManyToOne
-	@JoinColumn(name="fk_eventos")
-	private Eventos eventos;
+//	@ManyToOne
+//	@JoinColumn(name="fk_eventos")
+//	private Eventos eventos;
 
 	public Integer getId_pagamento() {
 		return id_pagamento;
@@ -55,12 +55,12 @@ public class Pagamento {
 		this.forma_pagamento = forma_pagamento;
 	}
 
-	public Eventos getEventos() {
-		return eventos;
-	}
-
-	public void setEventos(Eventos eventos) {
-		this.eventos = eventos;
-	}
+//	public Eventos getEventos() {
+//		return eventos;
+//	}
+//
+//	public void setEventos(Eventos eventos) {
+//		this.eventos = eventos;
+//	}
 
 }

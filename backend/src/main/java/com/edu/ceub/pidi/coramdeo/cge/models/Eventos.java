@@ -1,6 +1,7 @@
 package com.edu.ceub.pidi.coramdeo.cge.models;
 
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -10,64 +11,79 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
-public class Eventos {
+public class Eventos implements Serializable{
 	
+
+	
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	private Date dt_evento;
-	private String nome_evento;
+	private Integer Id;
 	
-	@OneToMany
-	@JoinColumn(name = "fk_pagamento") 
-	private List<Pagamento> pagamento;
+	@NotEmpty
+	@NotBlank
+	private String Dt_evento;
+	@NotBlank
+	private String Nome_evento;
 	
-	@OneToMany
-	@JoinColumn(name = "fk_pessoa") 
-	private List<Pessoa> pessoa;
-
+	
+	
 	public Integer getId() {
-		return id;
+		return Id;
 	}
-
 	public void setId(Integer id) {
-		this.id = id;
+		Id = id;
 	}
-
-	public Date getDt_evento() {
-		return dt_evento;
+	public String getDt_evento() {
+		return Dt_evento;
 	}
-
-	public void setDt_evento(Date dt_evento) {
-		this.dt_evento = dt_evento;
-	}
-
-	public String getNome_evento() {
-		return nome_evento;
-	}
-
-	public void setNome_evento(String nome_evento) {
-		this.nome_evento = nome_evento;
-	}
-
-	public List<Pagamento> getPagamento() {
-		return pagamento;
-	}
-
-	public void setPagamento(List<Pagamento> pagamento) {
-		this.pagamento = pagamento;
-	}
-
-	public List<Pessoa> getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(List<Pessoa> pessoa) {
-		this.pessoa = pessoa;
-	}
-	
+	public void setDt_evento(String dt_evento) {
 		
+		Dt_evento = dt_evento;
+	}
+	public String getNome_evento() {
+		return Nome_evento;
+	}
+	public void setNome_evento(String nome_evento) {
+		Nome_evento = nome_evento;
+	}
+//	java.util.Date dt = new java.util.Date();
+//
+//	java.text.SimpleDateFormat sdf = 
+//	     new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//
+//	String currentTime = sdf.format(dt);
+	
+//	@OneToMany
+//	@JoinColumn(name = "fk_pagamento") 
+//	private List<Pagamento> pagamento;
+//	
+//	@OneToMany
+//	@JoinColumn(name = "fk_pessoa") 
+//	private List<Pessoa> pessoa;
+
+	
+
+//	public List<Pagamento> getPagamento() {
+//		return pagamento;
+//	}
+//
+//	public void setPagamento(List<Pagamento> pagamento) {
+//		this.pagamento = pagamento;
+//	}
+//
+//	public List<Pessoa> getPessoa() {
+//		return pessoa;
+//	}
+//
+//	public void setPessoa(List<Pessoa> pessoa) {
+//		this.pessoa = pessoa;
+//	}
+
 }
