@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="css/style.css" rel="stylesheet" />
+<head>
+<meta charset="ISO-8859-1">
 <title>C.G.E.</title>
 </head>
 <body>
@@ -33,7 +30,7 @@
 					<a class="nav-link" href="/PessoaCadastro">Adicionar Pessoas</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/Pessoas">Lista de pessoas</a>
+					<a class="nav-link disabled" href="/Pessoas">Lista de pessoas</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link disabled" href="#">Em Breve</a>
@@ -45,27 +42,36 @@
 			<img src="https://i.postimg.cc/SQ5SzLXY/Coram-Deo.png" width="160" height="40" alt="coram deo img"/>
 		</a>
 	</nav>
-
+	<br>
 	<div class="container">
-		<h1 class="display-4" >Cadastro de eventos</h1>
-		<br>
-		<form method="post">
-			<div class="row">
-				<div class="col">
-					<label for="formGroupExampleInput">Nome do Evento</label>
-					<input type="text" name="nome_evento" class="form-control" placeholder="Coram deo"/>
-				</div>
-				<div class="col">
-					<label for="formGroupExampleInput">Data evento</label>
-					<input type="date" name="dt_evento" class="form-control" placeholder="10/10/2022"/>
-				</div>
-			</div>
-			</br>
-			<button type="submit" class="btn btn-dark">Salvar</button>
-		</form>
-	</div>
-	
+		<h2 class="display-4">Lista de Pessoas</h2>
+		<table class="container table">
+			<thead class="table-dark">
+				<tr>
+					<th scope="col">CPF</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Data de Nascimento</th>
+					<th scope="col">Telefone</th>
+					<th scope="col"></th>
 
+				</tr>
+			</thead>
+			<tbody class="table-light">
+				<tr th:each="pessoa : ${pessoa}">
+					<td><a th:href="@{/{codigo}(codigo=${pessoa.cpf})}"> 
+					<span th:text="${pessoa.cpf}"></span></a></td>
+					
+					<td><span th:text="${pessoa.nome}"></span></td>
+					<td><span th:text="${pessoa.dt_nasc}"></span></td>
+					<td><span th:text="${pessoa.telefone}"></span></td>
+					<td><a th:href="${(#mvc.url('PC#DeletarPessoa').arg(0, pessoa.id)).build()}">
+									Deletar</a></td>
+				</tr>
+			</tbody>
+		</table>
+		
+
+	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script

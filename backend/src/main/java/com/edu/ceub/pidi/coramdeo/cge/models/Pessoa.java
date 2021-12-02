@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -15,28 +17,19 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Pessoa {
+public class Pessoa {
 
 	@Id
-	@Column(name = "id_cpf", unique = true)
-	@NotEmpty
-	@NotBlank
-	private Long cpf;
-	@NotBlank
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	private String cpf;
 	private String Nome;
-	@NotBlank
-	private Date dt_nasc;
-	@NotBlank
+	private String dt_nasc;
 	private String telefone;
-	@NotBlank
 	private String email;
-	@NotBlank
 	private String cep;
-	@NotBlank
 	private String endereco;
-	@NotBlank
 	private String uf;
-	@NotBlank
 	private Float valor;
 	
 	@ManyToOne
@@ -44,12 +37,21 @@ public abstract class Pessoa {
 	
 	@OneToOne
 	private Candidato candidato;
+	
+	
+	public Integer getId() {
+		return id;
+	}
 
-	public Long getCpf() {
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -61,11 +63,11 @@ public abstract class Pessoa {
 		Nome = nome;
 	}
 
-	public Date getDt_nasc() {
+	public String getDt_nasc() {
 		return dt_nasc;
 	}
 
-	public void setDt_nasc(Date dt_nasc) {
+	public void setDt_nasc(String dt_nasc) {
 		this.dt_nasc = dt_nasc;
 	}
 

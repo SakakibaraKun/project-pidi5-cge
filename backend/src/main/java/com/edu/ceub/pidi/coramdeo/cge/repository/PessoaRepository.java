@@ -6,4 +6,5 @@ import com.edu.ceub.pidi.coramdeo.cge.models.Pessoa;
 
 public interface PessoaRepository extends JpaRepository<Pessoa, Integer>{
 
+
 }
