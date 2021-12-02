@@ -5,11 +5,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Colaborador extends Pessoa{
-		
-	 @ManyToOne
-	 @JoinColumn(name = "fk_pessoa") 
-	 private Pessoa pessoa;
+public class Colaborador extends Pessoa{	
 	 
 	 @ManyToOne
 	 @JoinColumn(name = "fk_cargo") 

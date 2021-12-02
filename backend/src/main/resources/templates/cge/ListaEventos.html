@@ -9,18 +9,49 @@
 <title>C.G.E.</title>
 </head>
 <body>
-<nav> <a href="/"><h2>Home</h2></a></nav>
-	<div >
-		<table class="container">
-			<thead>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: aqua;">
+		<a class="navbar-brand" href="#">C.G.E.</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Home <i class="fa-solid fa-house"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/eventos">Eventos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/cadastrarEvento">Criar Novo Evento</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/PessoaCadastro">Adicionar Pessoas</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Em Breve</a>
+				</li>
+			</ul>
+		</div>
+
+		<a class="navbar-brand" href="#">
+			<img src="assets/img/LOGO CORAMDEO_page-0001.jpg" width="130" height="30" alt="">
+		</a>
+	</nav>
+	<br>
+	<div class="container">
+		<h2 class="display-4">Lista de Eventos</h2>
+		<table class="container table">
+			<thead class="table-dark">
 				<tr>
-					<th>Nome</th>
-					<th>Data Evento</th>
-					<th>Deletar</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Data Evento</th>
+					<th scope="col">Deletar</th>
 
 				</tr>
 			</thead>
-			<tbody>
+			<tbody class="table-light">
 				<tr th:each="evento : ${evento}">
 					<td><a th:href="@{/{codigo}(codigo=${evento.id})}"> <span
 							th:text="${evento.Nome_evento}"></span></a></td>

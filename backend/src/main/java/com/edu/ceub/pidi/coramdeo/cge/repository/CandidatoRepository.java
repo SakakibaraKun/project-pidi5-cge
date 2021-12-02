@@ -9,5 +9,4 @@ public interface CandidatoRepository extends JpaRepository<Candidato, Integer>{
 //	Iterable<Candidato> findByEvento(Eventos eventos);
 //
 //	Candidato findByCpf(String cpf);
-
 }

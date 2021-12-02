@@ -1,6 +1,7 @@
 package com.edu.ceub.pidi.coramdeo.cge.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -15,19 +19,31 @@ public abstract class Pessoa {
 
 	@Id
 	@Column(name = "id_cpf", unique = true)
+	@NotEmpty
+	@NotBlank
 	private Long cpf;
+	@NotBlank
 	private String Nome;
+	@NotBlank
 	private Date dt_nasc;
+	@NotBlank
 	private String telefone;
+	@NotBlank
 	private String email;
+	@NotBlank
 	private String cep;
+	@NotBlank
 	private String endereco;
+	@NotBlank
 	private String uf;
+	@NotBlank
 	private Float valor;
-	private Float valor_contribuicao;
 	
-//	@ManyToOne
-//	private Eventos eventos;
+	@ManyToOne
+	private Eventos eventos;
+	
+	@OneToOne
+	private Candidato candidato;
 
 	public Long getCpf() {
 		return cpf;
@@ -99,14 +115,6 @@ public abstract class Pessoa {
 
 	public void setValor(Float valor) {
 		this.valor = valor;
-	}
-
-	public Float getValor_contribuicao() {
-		return valor_contribuicao;
-	}
-
-	public void setValor_contribuicao(Float valor_contribuicao) {
-		this.valor_contribuicao = valor_contribuicao;
 	}
 	
 }
