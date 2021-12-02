@@ -39,6 +39,9 @@
 					<a class="nav-link" href="/CargoCadastro">Adicionar Cargo</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="/PessoaValores">Adicionar Valores</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link disabled" href="#">Em Breve</a>
 				</li>
 			</ul>
@@ -58,6 +61,7 @@
 					<th scope="col">Nome</th>
 					<th scope="col">Data de Nascimento</th>
 					<th scope="col">Telefone</th>
+					<th scope="col">Valor</th>
 					<th scope="col"></th>
 
 				</tr>
@@ -70,6 +74,7 @@
 					<td><span th:text="${pessoa.nome}"></span></td>
 					<td><span th:text="${pessoa.dt_nasc}"></span></td>
 					<td><span th:text="${pessoa.telefone}"></span></td>
+					<td><span th:text="${pessoa.valor}"></span></td>
 					<td><a th:href="${(#mvc.url('PC#DeletarPessoa').arg(0, pessoa.id)).build()}">
 									Deletar</a></td>
 				</tr>

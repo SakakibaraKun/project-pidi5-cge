@@ -58,5 +58,18 @@ public class PessoaController {
 		pr.deleteById(id);	
 		return "redirect:/eventos";
 	}
+	@ApiOperation(value = "Retorna um form de Valores")	
+	@RequestMapping(value = "/PessoaValores", method = RequestMethod.GET )
+	@GetMapping(produces = "application/json")
+	public @ResponseBody ModelAndView FormValores() {
+		ModelAndView mv = new ModelAndView("cge/FormValores");
+		return mv;
+	}
+	@RequestMapping(value = "/PessoaValores", method = RequestMethod.POST )
+	@PostMapping()
+	public String FormCargo( @Valid Pessoa pessoa) {
+		pr.save(pessoa);
+		return "redirect:/eventos";
+	}
 
 }
