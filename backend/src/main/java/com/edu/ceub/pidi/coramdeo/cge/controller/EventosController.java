@@ -64,7 +64,7 @@ public class EventosController {
 		public String DeletarEvento(Integer id) {
 			er.deleteById(id);
 			
-			return "<h1>Deletado com sucesso</br></h1><a href=\"/eventos\"><h2>Lista de Eventos</h2></a>";
+			return "redirect:/eventos";
 		}
 		
 		
